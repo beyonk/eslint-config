@@ -1,7 +1,7 @@
 import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
 import globals from 'globals'
-import { warn, off } from './constants.js'
+import { off } from './constants.js'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
