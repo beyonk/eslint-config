@@ -31,7 +31,7 @@ export default [
       }
     },
     rules: {
-      'svelte/require-each-key': warn,
+      'svelte/require-each-key': off,
       'svelte/no-at-html-tags': off
     }
   }
