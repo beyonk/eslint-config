@@ -1,4 +1,4 @@
-import vitest from 'eslint-plugin-vitest'
+import vitest from '@vitest/eslint-plugin'
 import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
