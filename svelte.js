@@ -1,7 +1,7 @@
 import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
 import globals from 'globals'
-import { off } from './constants.js'
+import { off, error } from './constants.js'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -32,7 +32,9 @@ export default [
     },
     rules: {
       'svelte/require-each-key': off,
-      'svelte/no-at-html-tags': off
+      'svelte/no-at-html-tags': off,
+      'prefer-const': off,
+      'svelte/prefer-const': error
     }
   }
 ]
