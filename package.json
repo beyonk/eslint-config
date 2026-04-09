@@ -4,10 +4,10 @@
   "description": "Eslint config for beyonk",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint -c _self-lint.js .",
-    "lint:ci": "pnpm lint --format junit -o reports/junit/eslint-results.xml"
+    "test": "eslint -c _self-lint.js .",
+    "test:ci": "pnpm test --format junit -o reports/junit/eslint-results.xml"
   },
-  "repository": "beyonk/eslint-config",
+  "repository": "https://github.com/beyonk/eslint-config.git",
   "keywords": [
     "eslint",
     "config",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/beyonk/eslint-config/issues"
   },
-  "homepage": "https://github.com/beyonk/eslint-config#README.MD",
+  "homepage": "https://github.com/beyonk/eslint-config#readme",
   "dependencies": {
     "@eslint/js": "^9.39.4",
     "@vitest/eslint-plugin": "^1.6.17",
