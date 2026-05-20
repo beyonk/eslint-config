@@ -1,0 +1,8 @@
+packages:
+  - '.'
+
+allowBuilds:
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - svelte@5.55.8
