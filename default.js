@@ -9,7 +9,7 @@ export default [
     rules: {
       '@stylistic/array-bracket-spacing': [ error, always, { objectsInArrays: true, arraysInArrays: true } ],
       'promise/always-return': off,
-      'curly': error
+      curly: error
     }
   }
 ]
