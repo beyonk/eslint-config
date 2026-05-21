@@ -33,6 +33,16 @@ export default [
     rules: {
       'svelte/require-each-key': off,
       'svelte/no-at-html-tags': off,
+    }
+  },
+  {
+    files: [ '**/*.svelte', '**/*.svelte.js', '**/+{layout,page}.js', '**/+{layout,page}.server.js' ],
+    languageOptions: {
+      parserOptions: {
+        svelteConfig: readFileSync(join(process.cwd(), 'svelte.config.js'), 'utf8')
+      }
+    },
+    rules: {
       'svelte/no-navigation-without-resolve': off
     }
   }
