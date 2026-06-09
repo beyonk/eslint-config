@@ -36,7 +36,7 @@ export default [
     }
   },
   {
-    files: [ '**/*.svelte', '**/*.svelte.js', '**/+{layout,page}.js', '**/+{layout,page}.server.js' ],
+    files: [ '**/*.svelte', '**/*.js' ],
     languageOptions: {
       parserOptions: {
         svelteConfig: readFileSync(join(process.cwd(), 'svelte.config.js'), 'utf8')
