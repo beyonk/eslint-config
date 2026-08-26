@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write
       packages: write
     steps:
       - name: checkout
@@ -35,16 +36,13 @@ jobs:
       - name: dependencies
         run: |
           corepack enable
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
           pnpm i
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: publish
-        run: |
-          pnpm publish --registry https://npm.pkg.github.com --no-git-checks
-          pnpm publish --registry https://registry.npmjs.org --no-git-checks
-        env:
-          NPM_CONFIG_PROVENANCE: "false"
+      - name: publish to github packages
+        run: pnpm publish --registry https://npm.pkg.github.com --no-git-checks
+
+      - name: publish to npm
+        run: pnpm publish --registry https://registry.npmjs.org --no-git-checks --provenance
