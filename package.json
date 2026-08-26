@@ -51,7 +51,7 @@
     "runtime": {
       "name": "node",
       "version": "24.14.1",
-      "onFail": "error"
+      "onFail": "download"
     }
   },
   "engines": {
