@@ -35,13 +35,16 @@ jobs:
       - name: dependencies
         run: |
           corepack enable
-          pnpm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
-          pnpm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.GITHUB_TOKEN }}"
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
           pnpm i
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: publish
-        env:
-          NPM_CONFIG_PROVENANCE: "false"
         run: |
           pnpm publish --registry https://npm.pkg.github.com --no-git-checks
           pnpm publish --registry https://registry.npmjs.org --no-git-checks
+        env:
+          NPM_CONFIG_PROVENANCE: "false"
