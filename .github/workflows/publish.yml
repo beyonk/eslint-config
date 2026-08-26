@@ -40,6 +40,8 @@ jobs:
           pnpm i
 
       - name: publish
+        env:
+          NPM_CONFIG_PROVENANCE: "false"
         run: |
           pnpm publish --registry https://npm.pkg.github.com --no-git-checks
           pnpm publish --registry https://registry.npmjs.org --no-git-checks
