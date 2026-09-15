@@ -36,12 +36,35 @@ export default [
 
 There are multiple config types within the project that you can use. Look in `package.json/exports` for a comprehensive list:
 
+Svelte projects use `@beyonk/eslint-config/svelte` instead of `/recommended`. It's a function - pass it your own `svelte.config.js` (imported as a plain module) so the parser can pick up your Svelte compiler options:
+
 ```js
-import recommended from '@beyonk/eslint-config/recommended'
 import svelte from '@beyonk/eslint-config/svelte'
+import svelteConfig from './svelte.config.js'
 
 export default [
-  ...svelte
+  ...svelte(svelteConfig)
+]
+```
+
+For TypeScript apps, use `@beyonk/eslint-config/typescript` instead of `/recommended` - it wraps `neostandard({ ts: true })` with the same house rules:
+
+```js
+import typescript from '@beyonk/eslint-config/typescript'
+
+export default [
+  ...typescript
+]
+```
+
+For Svelte apps written in TypeScript, use `@beyonk/eslint-config/svelte-typescript` - also a function, same as `/svelte`:
+
+```js
+import svelteTypescript from '@beyonk/eslint-config/svelte-typescript'
+import svelteConfig from './svelte.config.js'
+
+export default [
+  ...svelteTypescript(svelteConfig)
 ]
 ```
 

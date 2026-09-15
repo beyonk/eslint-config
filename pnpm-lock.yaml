@@ -32,6 +32,12 @@ importers:
       svelte:
         specifier: ^5.55.8
         version: 5.55.8(@typescript-eslint/types@8.59.3)
+      svelte-eslint-parser:
+        specifier: ^1.6.1
+        version: 1.6.1(svelte@5.55.8(@typescript-eslint/types@8.59.3))
+      typescript-eslint:
+        specifier: ^8.59.3
+        version: 8.59.3(eslint@9.39.4)(typescript@6.0.3)
     devDependencies:
       eslint:
         specifier: ^9.39.4
