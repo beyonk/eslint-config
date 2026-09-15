@@ -1,6 +1,6 @@
 {
   "name": "@beyonk/eslint-config",
-  "version": "10.1.0",
+  "version": "10.1.1",
   "description": "Eslint config for beyonk",
   "main": "index.js",
   "scripts": {
@@ -54,11 +54,11 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.14.1",
+      "version": "^24.15.0",
       "onFail": "download"
     }
   },
   "engines": {
-    "node": "24.14.1"
+    "node": "^24.15.0"
   }
 }
